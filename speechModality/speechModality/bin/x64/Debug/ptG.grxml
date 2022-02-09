@@ -1,0 +1,189 @@
+﻿<?xml version="1.0"?>
+<grammar xml:lang="pt-PT" version="1.0" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="rootRule" scope="public">
+    <one-of>
+      <item repeat="0-1"> <ruleref uri="#move_piece"/> <tag> out.move_piece = rules.move_piece; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#send_msg"/> <tag> out.send_msg = rules.send_msg; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#quit"/> <tag> out.quit = rules.quit; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#challenge"/> <tag> out.challenge = rules.challenge; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#mistake"/> <tag> out.mistake = rules.mistake; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#accmistake"/> <tag> out.accmistake = rules.accmistake; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#rejmistake"/> <tag> out.rejmistake = rules.rejmistake; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#list"/> <tag> out.list = rules.list; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#accept"/> <tag> out.accept = rules.accept; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#decline"/> <tag> out.decline = rules.decline; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#cancel"/> <tag> out.cancel = rules.cancel; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#empate"/> <tag> out.empate = rules.empate; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#accempate"/> <tag> out.accempate = rules.accempate; </tag></item>
+      <item repeat="0-1"> <ruleref uri="#rejempate"/> <tag> out.rejempate = rules.rejempate; </tag></item>
+
+    </one-of>
+  </rule>
+  <rule id="move_piece">
+    <item> joga <tag> out.action = "joga"; </tag> </item>
+    <item>
+      <one-of>
+        <item> à <tag> out.initial_letter = "a"; </tag></item>
+        <item> bê <tag> out.initial_letter = "b"; </tag></item>
+        <item> cê <tag> out.initial_letter = "c"; </tag></item>
+        <item> dê <tag> out.initial_letter = "d"; </tag></item>
+        <item> é <tag> out.initial_letter = "e"; </tag></item>
+        <item> efe <tag> out.initial_letter = "f"; </tag></item>
+        <item> guê <tag> out.initial_letter = "g"; </tag></item>
+        <item> agá <tag> out.initial_letter = "h"; </tag></item>
+    </one-of>
+    </item>
+    <item>
+       <one-of>
+        <item> um <tag> out.initial_number = "1"; </tag></item>
+        <item> dois <tag> out.initial_number = "2"; </tag></item>
+        <item> três <tag> out.initial_number = "3"; </tag></item>
+        <item> quatro <tag> out.initial_number = "4"; </tag></item>
+        <item> cinco <tag> out.initial_number = "5"; </tag></item>
+        <item> seis <tag> out.initial_number = "6"; </tag></item>
+        <item> sete <tag> out.initial_number = "7"; </tag></item>
+        <item> oito <tag> out.initial_number = "8"; </tag></item>
+    </one-of>
+    </item>
+    <item repeat="0-1"> para </item>
+    <item>
+      <one-of>
+        <item> à <tag> out.final_letter = "a"; </tag></item>
+        <item> bê <tag> out.final_letter = "b"; </tag></item>
+        <item> cê <tag> out.final_letter = "c"; </tag></item>
+        <item> dê <tag> out.final_letter = "d"; </tag></item>
+        <item> é <tag> out.final_letter = "e"; </tag></item>
+        <item> efe <tag> out.final_letter = "f"; </tag></item>
+        <item> guê <tag> out.final_letter = "g"; </tag></item>
+        <item> agá <tag> out.final_letter = "h"; </tag></item>
+      </one-of>
+    </item>
+    <item>
+       <one-of>
+        <item> um <tag> out.final_number = "1"; </tag></item>
+        <item> dois <tag> out.final_number = "2"; </tag></item>
+        <item> três <tag> out.final_number = "3"; </tag></item>
+        <item> quatro <tag> out.final_number = "4"; </tag></item>
+        <item> cinco <tag> out.final_number = "5"; </tag></item>
+        <item> seis <tag> out.final_number = "6"; </tag></item>
+        <item> sete <tag> out.final_number = "7"; </tag></item>
+        <item> oito <tag> out.final_number = "8"; </tag></item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="send_msg">
+    <item>
+      <one-of>
+        <item> Envia <tag> out.action = "envia"; </tag></item>
+        <item> Diz <tag> out.action = "envia"; </tag></item>
+      </one-of>
+    </item>
+    <item>
+      <one-of>
+        <item> Bem jogado <tag> out.message = "bemjogado"; </tag> </item>
+        <item> Bom jogo <tag> out.message = "Bom jogo!"; </tag> </item>
+        <item> Não estava à espera dessa <tag> out.message = "Não estava à espera dessa!"; </tag> </item>
+        <item> Não tens hipóteses <tag> out.message = "Não tens hipóteses!"; </tag> </item>
+        <item> Desculpa, tenho de sair <tag> out.message = "Desculpa, tenho de sair!"; </tag> </item>
+        <item> guê guê <tag> out.message = "GG"; </tag> </item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="quit">
+    <item>
+      <one-of>
+        <item> Desisto <tag> out.action = "desisto"; </tag> </item>
+        <item> Quero desistir <tag> out.action = "desisto"; </tag> </item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="challenge">
+    <item>
+      <one-of>
+        <item> Convida <tag> out.action = "desafia"; </tag> </item>
+        <item> Desafia <tag> out.action = "desafia"; </tag> </item>
+      </one-of>
+    </item>
+    <item repeat="0-1">
+      <one-of>
+        <item> o </item>
+        <item> a </item>
+      </one-of>
+    </item>
+    <item>
+      <one-of>
+        <item> gui <tag> out.user = "pako25"; </tag> </item>
+        <item> cris <tag> out.user = "TestarCaderno" </tag> </item>
+        <item> guilherme <tag> out.user = "pako25"; </tag> </item>
+        <item> cristiano <tag> out.user = "TestarCaderno" </tag> </item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="mistake">
+    <item>
+      <one-of>
+        <item> Enganei-me, posso jogar de novo? <tag> out.action = "engano"; </tag> </item>
+        <item> Posso jogar de novo? <tag> out.action = "engano"; </tag> </item>
+        <item> Quero jogar de novo <tag> out.action = "engano"; </tag> </item>
+        <item> Posso voltar atrás? <tag> out.action = "engano"; </tag> </item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="accmistake">
+    <item>
+      <one-of>
+        <item> Pode jogar de novo <tag> out.action = "accengano"; </tag></item>
+        <item> Sim, pode jogar<tag> out.action = "accengano"; </tag></item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="rejmistake">
+    <item>
+      <one-of>
+        <item>Não, não pode jogar<tag> out.action = "rejengano"; </tag></item>
+        <item>Vamos continuar <tag> out.action = "rejengano"; </tag></item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="list">
+    <item>
+      <one-of>
+        <item> Tenho algum desafio? <tag> out.action = "list"; </tag></item>
+        <item> Alguém me desafiou? <tag> out.action = "list"; </tag></item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="accept">
+    <item>
+      <item>Aceita o desafio <tag> out.action = "accept"; </tag></item>
+    </item>
+  </rule>
+  <rule id="decline">
+    <item>
+      <item>Rejeita o desafio <tag> out.action = "decline"; </tag></item>
+    </item>
+  </rule>
+  <rule id="cancel">
+    <item>
+      <item>Cancela o desafio <tag> out.action = "cancel"; </tag></item>
+    </item>
+  </rule>
+  <rule id="empate">
+    <item>
+      <one-of>
+        <item>Proponho empate <tag> out.action = "empate"; </tag></item>
+        <item>Quero empate <tag> out.action = "empate"; </tag></item>
+      </one-of>
+    </item>
+  </rule>
+  <rule id="accempate">
+    <item>
+      <item>Aceito empate <tag> out.action = "accempate"; </tag></item>
+    </item>
+  </rule>
+  <rule id="rejempate">
+    <item>
+      <item>Rejeito empate <tag> out.action = "rejempate"; </tag></item>
+    </item>
+  </rule>
+</grammar>
