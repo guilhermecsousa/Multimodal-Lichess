@@ -1,6 +1,6 @@
 # Multimodal-Lichess
 
-Project developed within the scope of the course of the Integrated Master in Computer Engineering and Telematics, Multimodal Interaction.
+Project developed within the scope of the course of Integrated Masters in Computer and Telematics Engineering, Multimodal Interaction.
 
 Software to control the Lichess application through voice and gestures.
 
