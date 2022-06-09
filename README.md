@@ -1,9 +1,10 @@
 # Multimodal-Lichess
 
-Projeto desenvolvido no âmbito da cadeira do Mestrado Integrado em Engenharia de Computadores e Telemática, Interação Multimodal.
+Project developed within the scope of the course of the Integrated Master in Computer Engineering and Telematics, Multimodal Interaction.
 
-Software para controlo da aplicação Lichess através de voz e gestos. 
+Software to control the Lichess application through voice and gestures.
 
-A arquitetura da solução é a seguinte. De realçar o uso de um equipamento Kinect.
+The solution architecture is as follows. Kinect equipment was used.
+
 
 ![imagem](https://user-images.githubusercontent.com/33804016/153190852-fbf26e25-66ef-43c5-b58d-3a4aa61e6386.png)
